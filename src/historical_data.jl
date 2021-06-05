@@ -1,3 +1,4 @@
+export get_historical_data, get_exchange_volume, get_symbol_volume, get_symbol_volume_single_exchange
 """
     get_historical_data(duration::String, fsym::String, tsym::String; tryConversion::Bool=true,
                                 e::String="all", aggregate::Int=1, aggregatePredictableTimePeriods::Bool=true, 
@@ -135,6 +136,11 @@ function get_symbol_volume(duration::String, fsym::String, tsym::String; aggrega
 end
 
 """
+    get_symbol_volume_single_exchange(duration::String, fsym::String, tsym::String; e::String="all", aggregate::Int=1, limit::Int=30, toTs::String="", extraParams::String="", sign::Bool=false)
+Get the daily from and to volume for a symbol on an exchange.
+The value is based on 00:00 GMT time and is calculated as the sum of all trades where the symbol/asset was involved either as the from/base or as the to/quote/counter on the requested exchange.
+If you want to get all the available historical data, you can use limit=2000 and keep going back in time using the toTs param. You can then keep requesting batches using: &limit=2000&toTs={the earliest timestamp received}.
+
 1. fsym [Required]: The cryptocurrency symbol of interest [ Min length - 1] [ Max length - 30]
 2. tsym [Required]: The currency symbol to convert into [ Min length - 1] [ Max length - 30]
 3. e: The exchange to obtain data from [ Min length - 2] [ Max length - 30] [ Default - CCCAGG]

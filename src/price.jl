@@ -1,4 +1,4 @@
-
+export get_symbol_price, get_multisymbol_price, get_multisymbol_data, get_custom_average
 """
     get_symbol_price()
 

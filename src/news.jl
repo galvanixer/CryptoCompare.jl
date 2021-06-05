@@ -1,3 +1,4 @@
+export get_latest_news, get_news_feeds, get_news_categories, get_news_feeds_and_categories
 """
     get_latest_news(; lang::String=EN, feeds::Array{String,1}, categories::Array{String,1}, ITs::Int64, sortOrder::String)
 
