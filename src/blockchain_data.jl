@@ -1,4 +1,4 @@
-export get_coin_list, get_coin_latest, get_historical_daily, get_mining_calculator_datas
+export get_coin_list, get_coin_latest, get_historical_daily, get_mining_calculator_data
 
 function get_coin_list(; extraParams::String="", sign::Bool=false, api_key::String="")
     url = build_blockchain_data_url("available_coin_list", extraParams=extraParams, sign=sign, api_key=api_key)
