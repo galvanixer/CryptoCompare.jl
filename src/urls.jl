@@ -182,7 +182,7 @@ function build_symbol_vol_single_exchange_url(fname::String; kwargs...)
 end 
 
 function build_historical_data_url(fname::String; kwargs...)
-    if fname in ["day", "hour"]
+    if fname in ["day", "hour", "minute"]
         url = "https://min-api.cryptocompare.com/data/v2/histo$(fname)?"
     end 
 
